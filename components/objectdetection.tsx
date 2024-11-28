@@ -3,6 +3,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import Webcam from "react-webcam";
 import {load as cocoSSDLoad} from "@tensorflow-models/coco-ssd";
+import "@tensorflow/tfjs-backend-webgl";
 import "@tensorflow/tfjs-backend-cpu";
 import { renderPredictions } from "@/utils/renderpredictions";
 
@@ -23,7 +24,7 @@ const ObjectDetection = () => {
 
     detectInterval = setInterval(() => {
       runObjectDetection(net); // will build this next
-    }, 1);
+    }, 10);
   }
 
   async function runObjectDetection(net: any) {
@@ -41,8 +42,6 @@ const ObjectDetection = () => {
         undefined,
         0.6
       );
-
-      // console.log(detectedObjects);
       const context = canvasRef.current.getContext('2d')
       renderPredictions(detectedObjects, context)
     }
