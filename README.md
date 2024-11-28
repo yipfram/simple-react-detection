@@ -14,4 +14,4 @@ You must have [⭐Nodejs⭐](https://nodejs.org/en) installed.
 run ``npm install`` to install the packages 
 then ``npm run dev``
 
-default connection is [https://localhost:3000](https://localhost:3000
+default connection is [https://localhost:3000](https://localhost:3000)
